@@ -16,8 +16,8 @@ print ("I have", 3 ,"years of experience")
 # PART 1: VARIABLES & DATA TYPES 
 
 tester_name = "Aditya"
-test_case_excuted = 75
+test_case_executed = 75
 pass_percentage = 93.3
 automation = "true"
 
-print(tester_name, test_case_excuted, pass_percentage, automation)
+print(tester_name, test_case_executed, pass_percentage, automation)
