@@ -1,7 +1,6 @@
-# ============================================
-# ASSIGNMENT 3: CONDITIONALS (if / elif / else)
-# ============================================
 #
+# ASSIGNMENT 3: CONDITIONALS (if / elif / else)
+
 # Goal: Practice decision-making logic with if/elif/else using QA-style
 # test data — the kind of branching you'll use constantly when scripting
 # checks on test results.
@@ -14,11 +13,13 @@
 
 # ---- PART A: Basic if / else ----
 # A test case either passes or fails. Report its status.
+test_result = "pass"   # try changing this to "fail" and re-running
 
-test_result = "fail"   # try changing this to "pass" and re-running
-
-# TODO: If test_result is "pass", print "Test passed."
-# Otherwise, print "Test failed."
+# If test_result is "pass", print "Test passed." Otherwise, print "Test failed."
+if test_result == "pass":
+    print("Test passed.")
+else:
+    print("Test failed.")
 
 
 # ---- PART B: if / elif / else chain ----
@@ -30,9 +31,17 @@ test_result = "fail"   # try changing this to "pass" and re-running
 
 pass_percentage = 82.5   # try a few different values: 97, 88, 45
 
-# TODO: Write an if/elif/else chain that assigns the correct grade
-# string to a variable named build_grade, then print it.
-# build_grade = ...
+# Assign the correct grade to build_grade and print it.
+if pass_percentage >= 95:
+    build_grade = "Excellent"
+elif pass_percentage >= 80:
+    build_grade = "Acceptable"
+elif pass_percentage >= 60:
+    build_grade = "Needs improvement"
+else:
+    build_grade = "Not release-ready"
+
+print(build_grade)
 
 
 # ---- PART C: Combining conditions (and / or / not) ----
@@ -43,13 +52,15 @@ pass_percentage = 82.5   # try a few different values: 97, 88, 45
 pass_percentage_2 = 92
 critical_bugs = 0
 
-# TODO: Use a single if/else (with 'and') to decide release approval.
-# Print "Release approved." or "Release blocked." accordingly.
+# Use a single if/else (with 'and') to decide release approval.
+if pass_percentage_2 >= 90 and critical_bugs == 0:
+    print("Release approved.")
+else:
+    print("Release blocked.")
 
 
 # ---- BONUS ----
-# TODO: In one line, explain the difference between using "elif" versus
-# writing multiple separate "if" statements for the grading logic in
-# Part B. Why does it matter here?
-#
-# Your explanation:
+# elif checks the next condition only when the previous condition is false,
+# and only the first matching block runs. Separate if statements are checked
+# independently, so multiple blocks may execute. This matters here because we
+# want exactly one grade assigned to each build.

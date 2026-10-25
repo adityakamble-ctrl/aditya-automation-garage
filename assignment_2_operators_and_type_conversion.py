@@ -15,7 +15,7 @@
 
 # TODO: Create two variables, total_tests and failed_tests, with sample values.
 total_tests = 100
-failed_tests = 25
+failed_tests = 15
 
 # TODO: Calculate passed_tests using total_tests and failed_tests.
 passed_tests = total_tests - failed_tests
@@ -32,7 +32,7 @@ print("Total:", total_tests, "Passed:", passed_tests, "Failed:", failed_tests, "
 
 # TODO: Set a variable pass_threshold = 90
 # (the minimum pass percentage required to approve a release)
-pass_threshold = 90
+pass_threshold = 80
 
 # TODO: Use a comparison operator to check if pass_percentage meets or
 # exceeds pass_threshold. The result should be True or False.
