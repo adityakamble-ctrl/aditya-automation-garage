@@ -1,68 +1,53 @@
-# ============================================
-# ASSIGNMENT 2: OPERATORS & TYPE CONVERSION
-# ============================================
 #
-# Goal: Practice arithmetic/comparison operators and converting between
-# data types (str, int, float) using QA-style test data.
-#
-# Instructions:
-# - Replace each TODO with your own code.
-# - Run the file (python assignment_2_operators_and_type_conversion.py)
-#   and check the output makes sense.
+# ============================================
+# ASSIGNMENT 2: OPERATORS AND TYPE CONVERSION
+# ============================================
 
+# ---- PART A: Variables and arithmetic ----
 
-# ---- PART A: Arithmetic operators ----
-
-# TODO: Create two variables, total_tests and failed_tests, with sample values.
+# Create two variables with sample values.
 total_tests = 100
 failed_tests = 15
 
-# TODO: Calculate passed_tests using total_tests and failed_tests.
+# Calculate the number of passed tests.
 passed_tests = total_tests - failed_tests
 
-# TODO: Calculate pass_percentage as a percentage (float).
-# Hint: (passed_tests / total_tests) * 100
+print("Total tests:", total_tests)
+print("Failed tests:", failed_tests)
+print("Passed tests:", passed_tests)
+
+
+# ---- PART B: Calculate pass percentage ----
+
+# Calculate the percentage of tests that passed.
 pass_percentage = (passed_tests / total_tests) * 100
 
-# TODO: Print all four values with labels, e.g.
-print("Total:", total_tests, "Passed:", passed_tests, "Failed:", failed_tests, "Pass %:", pass_percentage)
+print("Pass percentage:", pass_percentage)
 
 
-# ---- PART B: Comparison operators ----
+# ---- PART C: Comparison operator ----
 
-# TODO: Set a variable pass_threshold = 90
-# (the minimum pass percentage required to approve a release)
+# Set the minimum pass percentage required for release.
 pass_threshold = 80
 
-# TODO: Use a comparison operator to check if pass_percentage meets or
-# exceeds pass_threshold. The result should be True or False.
+# Check whether the pass percentage meets the threshold.
 is_release_ready = pass_percentage >= pass_threshold
 
-# TODO: Print is_release_ready
-print(is_release_ready)
+print("Release ready:", is_release_ready)
 
 
-# ---- PART C: Type conversion ----
-# Test data often arrives as text (e.g. from a config file, CLI argument, or CSV).
+# ---- PART D: Type conversion ----
 
-test_count_str = "100"
-duration_str = "10.53"
+# Convert the pass percentage to an integer.
+pass_percentage_int = int(pass_percentage)
 
-# TODO: Convert test_count_str to an integer.
-test_count_int = int(test_count_str)
-
-# TODO: Convert duration_str to a float.
-duration_float = float(duration_str)
-
-# TODO: Build a single sentence combining both converted values, e.g.
-#"Executed 100 test cases in 10.53 seconds"
-summary = f"Executed {test_count_int} test cases in {duration_float} seconds"
-print(summary)
+print("Pass percentage as integer:", pass_percentage_int)
+print("Pass percentage type:", type(pass_percentage_int))
 
 
-# ---- BONUS ----
-# TODO: Try running int("12.5") in a separate line (or in the Python shell).
-# It will raise an error. Write one line below explaining, in your own words,
-# why int() fails on that string but float() does not.
-#
-# Your explanation: "10.53" is a string containing a decimal value. float() can convert it to a decimal number, but int() expects a whole-number string such as "10", so int("10.53") gives an error
+# ---- BONUS: Release decision ----
+
+if is_release_ready:
+    print("Release approved.")
+else:
+    print("Release blocked.")
